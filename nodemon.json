@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ext": "ts",
+  "ignore": ["src/**/*.spec.ts", "src/**/__mocks__/*"],
+  "exec": "node -r ts-node/register -r tsconfig-paths/register src/index.ts"
+}

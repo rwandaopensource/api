@@ -27,9 +27,9 @@ jobs:
         npm run test --if-present
 
     - name: 'Deploy to Azure Web App'
-      uses: azure/webapps-deploy@v1
+      uses: azure/webapps-deploy@v2
       with:
-        app-name: 'ros-backend(staging)'
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
         slot-name: 'staging'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_d9257762b25c4112be83282169d0461f }}
         package: .

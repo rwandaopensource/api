@@ -1,0 +1,45 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "project": "./tsconfig.json",
+        "ecmaFeatures": { 
+            "modules": true
+        }
+    },
+    "env": {
+        "node": true,
+        "es6": true,
+        "jest": true
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".json", ".ts", ".js"]
+            }
+        }
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "extends": "airbnb-base",
+    "rules": {
+        "prefer-object-spread": 0,
+        "no-console": "warn",
+        "indent": [ 1, 2 ],
+        "no-unused-expressions":"error",
+        "no-multiple-empty-lines":"warn",
+        "no-trailing-spaces": "warn",
+        "eol-last": "warn",
+        "arrow-parens":"off",
+        "no-shadow": ["error", { "allow": ["req", "res", "err", "next"] }],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "ts": "never",
+                "json": "never"
+            }
+        ]
+    }
+}
