@@ -1,14 +1,14 @@
 # backend.opensource.org.rw
 
 [![Build Status](https://dev.azure.com/urbainishimwe/opensource.org.rw/_apis/build/status/rwandaopensource.backend.opensource.org.rw?branchName=develop)](https://dev.azure.com/urbainishimwe/opensource.org.rw/_build/latest?definitionId=4&branchName=develop)
-![Build and deploy Node.js app to Azure Web App - ros-backend(staging)](<https://github.com/rwandaopensource/backend.opensource.org.rw/workflows/Build%20and%20deploy%20Node.js%20app%20to%20Azure%20Web%20App%20-%20ros-backend(staging)/badge.svg?branch=develop>)
+![Build and deploy Node.js app to Azure Web App - ros-api(staging)](https://github.com/rwandaopensource/backend.opensource.org.rw/workflows/Build%20and%20deploy%20Node.js%20app%20to%20Azure%20Web%20App%20-%20ros-api(staging)/badge.svg?branch=develop)
 
 This is the Backend of opensource.org.rw, find the frontend [here](https://github.com/rwandaopensource/opensource.org.rw)
 
 ### DEPLOYMENTS
 
-- develop branch(staging) is deployed at [backend-staging.opensource.org.rw](https://backend-staging.opensource.org.rw)
-- master branch(production) is deployed at [backend.opensource.org.rw](http://backend.opensource.org.rw)
+- develop branch(staging) is deployed at [api-staging.opensource.org.rw](https://api-staging.opensource.org.rw)
+- master branch(production) is deployed at [api.opensource.org.rw](http://api.opensource.org.rw)
 
 The main responsibility of the backend is to use **Github API** and **Slack API** to provide services listed below:
 
@@ -23,10 +23,17 @@ The main responsibility of the backend is to use **Github API** and **Slack API*
 - number of current members
 - number of repository
 - popular repositories
+- insights about projects
 
-**member of slack:**
+**slack:**
 
 - generate invitation for a user to join the workspace
+- join slack channels
+- slack workspace's token, only for members
+
+**for members (API of cloudflare)**
+- get a sub-domain of **opensource.org.rw**
+
 
 ### Have another good idea or feature\*\*
 
@@ -40,7 +47,7 @@ The main responsibility of the backend is to use **Github API** and **Slack API*
 It's mandatory to use [NODE 12.X](https://nodejs.org/en/download/current/) and this project is fully **TypeScript**
 
 - clone this repo and cd to the working directory
-- create .env file and add BACKEND_URL, CLIENT_ID , CLIENT_SECRET
+- follow instructions in `.env.sample` file and setup your `.env` file.
 - install dependencies by `npm install` note that **yarn** is not configured
 - start the app in development mode `npm run start:dev`
 - start the app in production mode `npm start`

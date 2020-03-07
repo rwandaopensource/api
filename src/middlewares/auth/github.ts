@@ -1,5 +1,6 @@
 import passport from 'passport';
 import { Strategy } from 'passport-github';
+import env from '../../env';
 
 passport.serializeUser((user, done) => {
   done(null, user);
@@ -12,9 +13,9 @@ passport.deserializeUser((user, done) => {
 passport.use(
   new Strategy(
     {
-      clientID: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: `${process.env.BACKEND_URL}/v1/auth/github/callback`,
+      clientID: env.GITHUB_CLIENT_ID,
+      clientSecret: env.GITHUB_CLIENT_SECRET,
+      callbackURL: `${env.BACKEND_URL}/auth/github/callback`,
     },
     (accessToken, refreshToken, profile, done) => done(null, profile),
   ),

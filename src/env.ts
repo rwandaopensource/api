@@ -20,8 +20,11 @@ dotenv.load({
 
 export default {
   ...process.env,
-  PORT: isDevelopment ? 5000 : 8080, // Don't ever change this(Azure connect app to this port)
+  PORT: isDevelopment || isTest ? 5000 : process.env.PORT, // Don't change this
   NODE_ENV: process.env.NODE_ENV || 'production',
   isTest,
   isDevelopment,
+  GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
+  GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
+  BACKEND_URL: process.env.BACKEND_URL,
 };
