@@ -17,7 +17,7 @@ passport.use(
       clientSecret: env.GITHUB_CLIENT_SECRET,
       callbackURL: `${env.BACKEND_URL}/auth/github/callback`,
     },
-    (accessToken, refreshToken, profile, done) => done(null, profile),
+    (accessToken, refreshToken, profile, done) => done(null, { profile, accessToken }),
   ),
 );
 export default passport;
