@@ -5,7 +5,7 @@ const GithubRouter = express.Router();
 
 GithubRouter.get(
   '/auth/github',
-  passport.authenticate('github', { scope: ['user:email'] }),
+  passport.authenticate('github', { scope: ['user:email', 'write:org', 'read:org', 'repo:invite'] }),
 );
 
 GithubRouter.get(

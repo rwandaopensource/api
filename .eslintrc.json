@@ -31,6 +31,7 @@
         "no-trailing-spaces": "warn",
         "eol-last": "warn",
         "arrow-parens":"off",
+        "import/no-extraneous-dependencies": "off",
         "no-shadow": ["error", { "allow": ["req", "res", "err", "next"] }],
         "import/extensions": [
             "error",

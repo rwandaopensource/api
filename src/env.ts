@@ -7,7 +7,7 @@ const isTest = envName === 'test';
 const isDevelopment = envName === 'development';
 
 dotenv.load({
-  silent: false,
+  silent: true,
   path,
   defaults: resolve(__dirname, '../.env'),
   schema: resolve(__dirname, '../.env.sample'),
