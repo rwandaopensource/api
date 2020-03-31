@@ -1,5 +1,5 @@
 import chai from 'chai';
-import cache from './cache';
+import cache from '../cache';
 
 const { expect } = chai;
 describe('Test LRU cache for all base cases', () => {
