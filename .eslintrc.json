@@ -24,7 +24,7 @@
     "extends": "airbnb-base",
     "rules": {
         "prefer-object-spread": 0,
-        "no-console": "warn",
+        "no-console": "off",
         "indent": [ 1, 2 ],
         "no-unused-expressions":"error",
         "no-multiple-empty-lines":"warn",
@@ -33,6 +33,7 @@
         "arrow-parens":"off",
         "import/no-extraneous-dependencies": "off",
         "no-shadow": ["error", { "allow": ["req", "res", "err", "next"] }],
+        "no-unused-vars": ["error", { "allow": ["next", "req", "res", "err"]}],
         "import/extensions": [
             "error",
             "ignorePackages",

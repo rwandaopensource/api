@@ -1,17 +1,18 @@
 import express from 'express';
 import passport from '../../middlewares/auth/github';
+import { signinGithub, redirectGithub } from './controller';
 
 const GithubRouter = express.Router();
 
 GithubRouter.get(
-  '/auth/github',
-  passport.authenticate('github', { scope: ['user:email', 'write:org', 'read:org', 'repo:invite'] }),
+  '/auth/github', redirectGithub,
+  passport.authenticate('github', { scope: ['user:email', 'write:org'] }),
 );
 
 GithubRouter.get(
   '/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/' }),
-  (req, res) => res.json(req.user),
+  signinGithub,
 );
 
 export default GithubRouter;

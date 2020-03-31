@@ -28,4 +28,6 @@ export default {
   GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
   BACKEND_URL: process.env.BACKEND_URL,
   GITHUB_USER_TOKEN: process.env.GITHUB_USER_TOKEN,
+  FRONTEND_URL: process.env.FRONTEND_URL,
+  PRIVATE_KEY: process.env.PRIVATE_KEY,
 };
