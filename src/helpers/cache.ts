@@ -37,8 +37,8 @@ class Cache extends LRUCache<string, string> {
 
 export default new Cache({
   maxAge: 24 * 60 * 60 * 1000, // elements should last for one day,
-  stale: true, // expired keys should be returned before being deleted
+  stale: false, // expired keys should not be returned before being deleted
   updateAgeOnGet: false, // avoid updating the max age of an element when expired
-  max: 1024 * 1024 * 10, // memory leaks is a big deal 😞😞😞, this should not exceed 10mbs
+  max: 1024 * 1024 * 20, // memory leaks is a big deal 😞😞😞, this should not exceed 20mbs
   length: (value: string): number => value.length,
 });

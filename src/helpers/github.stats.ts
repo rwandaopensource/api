@@ -27,7 +27,8 @@ export default class GithubStat {
       });
       return this.parseNumberOfPage(response.headers.link);
     } catch (err) {
-      return -1;
+      console.error(Date.now().toString(), err.message);
+      return 0;
     }
   }
 
@@ -46,7 +47,8 @@ export default class GithubStat {
       });
       return this.parseNumberOfPage(response.headers.link);
     } catch (err) {
-      return -1;
+      console.error(Date.now().toString(), err);
+      return 0;
     }
   }
 
@@ -65,7 +67,8 @@ export default class GithubStat {
       });
       return this.parseNumberOfPage(response.headers.link);
     } catch (err) {
-      return -1;
+      console.error(Date.now().toString(), err.message);
+      return 0;
     }
   }
 
@@ -87,7 +90,8 @@ export default class GithubStat {
       });
       return this.parseNumberOfPage(response.headers.link);
     } catch (err) {
-      return -1;
+      console.error(Date.now().toString(), err.message);
+      return 0;
     }
   }
 
