@@ -7,14 +7,14 @@
     "node": "12.x"
   },
   "scripts": {
-    "prepend": "npm config set scripts-prepend-node-path true",
-    "test": "npm run prepend && NODE_ENV=test node -r ts-node/register -r tsconfig-paths/register node_modules/jest/bin/jest --c=jest.config.js --logHeapUsage --runInBand  --no-cache  --detectOpenHandles --forceExit",
+    "prepend": "yarn config set scripts-prepend-node-path true",
+    "test": "yarn prepend && NODE_ENV=test node -r ts-node/register -r tsconfig-paths/register node_modules/jest/bin/jest --c=jest.config.js --logHeapUsage --runInBand  --no-cache  --detectOpenHandles --forceExit",
     "start": "NODE_ENV=production node dist/index.js",
     "start:dev": "NODE_ENV=development nodemon",
     "lint": "eslint ./src/**/**.ts --fix",
     "clean": "rm -rf dist && mkdir dist",
     "tsc": "ts-node -r tsconfig-paths/register",
-    "build": "npm run clean && npm run compile",
+    "build": "yarn clean && yarn compile",
     "compile": "tsc -b tsconfig.build.json"
   },
   "repository": {
@@ -71,8 +71,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn test"
     }
   }
 }
