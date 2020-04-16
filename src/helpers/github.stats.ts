@@ -1,7 +1,7 @@
 import axios from 'axios';
 import env from '../env';
 
-const baseHeaders: { Authorization: string, Accept: string } = {
+export const baseHeaders: { Authorization: string, Accept: string } = {
   Authorization: `token ${env.GITHUB_USER_TOKEN}`,
   Accept: 'application/vnd.github.v3+json',
 };
@@ -95,11 +95,11 @@ export default class GithubStat {
     }
   }
 
-  static parseNumberOfPage(link: string): any {
+  static parseNumberOfPage(link: string): number {
     if (!link) {
       return 1;
     }
     const matched: RegExpMatchArray = link.match(/page=(\d+)>; rel="last"/) || [];
-    return matched[1] || 1;
+    return parseInt((matched[1] || 1).toString(), 10);
   }
 }
