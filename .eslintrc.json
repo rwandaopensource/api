@@ -23,6 +23,9 @@
     "plugins": ["@typescript-eslint"],
     "extends": "airbnb-base",
     "rules": {
+        "no-await-in-loop": "off",
+        "guard-for-in": "off",
+        "no-restricted-syntax": "off",
         "prefer-object-spread": 0,
         "no-console": "off",
         "indent": [ 1, 2 ],
