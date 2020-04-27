@@ -21,14 +21,9 @@ export default class GithubMembers {
         return cache.get(`MEMBERS_PAGE_${page}`);
       }
       const URL = `https://api.github.com/orgs/rwandaopensource/members?page=${page}&per_page=12`;
-      let { data } = await axios.get(URL, {
+      const { data } = await axios.get(URL, {
         headers: baseHeaders,
       });
-      for (const i in data) {
-        data[i] = await GithubMembers.member(data[i].login);
-      }
-      data = data.filter((element: any) => element);
-      cache.set(`MEMBERS_PAGE_${page}`, data);
       return data;
     } catch (err) {
       console.error(Date.now().toString(), err.message);
