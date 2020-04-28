@@ -30,4 +30,5 @@ export default {
   GITHUB_USER_TOKEN: process.env.GITHUB_USER_TOKEN,
   FRONTEND_URL: process.env.FRONTEND_URL,
   PRIVATE_KEY: process.env.PRIVATE_KEY,
+  SLACK_WEBHOOK_URL: process.env.SLACK_WEBHOOK_URL,
 };

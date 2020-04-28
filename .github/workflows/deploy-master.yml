@@ -21,8 +21,3 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
         repository: rwandaopensource/api-opensource
         tags: lts
-
-    - name: trigger netlify build hooks
-      uses: wei/curl@v1
-      with:
-        args: -X POST -d '{}' ${{ secrets.PRODUCTION_BUILD_HOOK }}
