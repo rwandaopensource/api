@@ -47,11 +47,11 @@ It's mandatory to use [NODE 12.X](https://nodejs.org/en/download/current/) and t
 
 - clone this repo and cd to the working directory
 - follow instructions in `.env.sample` file and setup your `.env` file.
-- install dependencies by `npm install` note that **yarn** is not configured
-- start the app in development mode `npm run start:dev`
-- start the app in production mode `npm start`
-- running tests `npm test`
-- to compile source down to **ES5** `npm run build`
+- install dependencies by `yarn install`
+- start the app in development mode `yarn run start:dev`
+- start the app in production mode `yarn start`
+- running tests `yarn test`
+- to compile source down to **ES5** `yarn run build`
 - **HAPPY CODING! 😎**
 
 ### CONTRIBUTIONS
