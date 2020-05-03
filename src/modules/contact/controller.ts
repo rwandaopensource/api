@@ -5,6 +5,7 @@ export default class ContactController {
     const { body: { from, subject, message } } = req;
     if (!(from && subject && message)) {
       res.status(400).json({});
+      return;
     }
     const sent = await sendMessage(from, subject, message);
     if (sent) {
